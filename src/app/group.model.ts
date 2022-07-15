@@ -1,9 +1,9 @@
 export class Group {
   constructor(
-    public title: string,
-    public system: string,
-    public theme: string,
-    public date: Date,
-    public description: string,
+    public title?: string | null,
+    public system?: string | null,
+    public theme?: string | null,
+    public date?: Date | null,
+    public description?: string | null,
   ) {}
 }

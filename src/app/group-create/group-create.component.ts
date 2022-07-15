@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Group } from '../group.model';
+import { GroupService } from '../group.service';
 
 @Component({
   selector: 'app-group-create',
@@ -9,24 +11,31 @@ import { FormBuilder } from '@angular/forms';
 export class GroupCreateComponent implements OnInit {
 
   groupForm = this.fb.group({
-    title: [''],
-    system: [''],
-    theme: [''],
-    date: [''],
-    description: [''],
+    title: ['', Validators.required],
+    system: ['', Validators.required],
+    theme: ['', Validators.required],
+    date: [null, Validators.required],
+    description: ['', Validators.required],
   })
+
   systems = [
     'D&D 5e',
     'D&D 4e',
     'PathFinder 2e',
   ]
-  constructor(private fb: FormBuilder ) { }
+
+  constructor(
+    private fb: FormBuilder,
+    private groupService: GroupService
+  ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    console.log(this.groupForm.value);
+    const group: Group = this.groupForm.value;
+    this.groupService.groups.push(group);
+    console.log(this.groupService.groups);
   }
 
 }
