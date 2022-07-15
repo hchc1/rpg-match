@@ -1,42 +1,49 @@
-<form [formGroup]="groupForm">
+<form [formGroup]="groupForm" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="col-sm-12">
       <div class="form-group">
-        <input class="form-control" type="text" id="title">
         <label class="form-label" for="title">Titulo</label>
+        <input formControlName="title" class="form-control" type="text" id="title">
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <div class="form-group">
-        <input class="form-control" type="text" id="system">
         <label class="form-label" for="title">Sistema</label>
+        <select class="form-control" id="system" formControlName="system">
+          <option *ngFor="let system of systems" [value]="system">{{ system }}</option>
+        </select>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <div class="form-group">
-        <input class="form-control" type="text" id="theme">
         <label class="form-label" for="title">Tema</label>
+        <input formControlName="theme" class="form-control" type="text" id="theme">
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <div class="form-group">
-        <input class="form-control" type="text" id="date">
         <label class="form-label" for="title">Data</label>
+        <input formControlName="date" class="form-control" type="text" id="date">
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <div class="form-group">
-        <input class="form-control" type="text" id="description">
         <label class="form-label" for="title">Descrição</label>
+        <textarea formControlName="description" class="form-control" type="text" id="description"></textarea>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-primary" type="submit">OK!</button>
     </div>
   </div>
 </form>

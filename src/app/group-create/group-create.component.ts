@@ -15,10 +15,18 @@ export class GroupCreateComponent implements OnInit {
     date: [''],
     description: [''],
   })
-  
+  systems = [
+    'D&D 5e',
+    'D&D 4e',
+    'PathFinder 2e',
+  ]
   constructor(private fb: FormBuilder ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    console.log(this.groupForm.value);
   }
 
 }
