@@ -10,14 +10,14 @@ import { GroupService } from '../group.service';
 })
 export class GroupListComponent implements OnInit {
 
-  sessions: Group[] = [];
+  groups: Group[] = [];
 
   constructor(private groupService: GroupService, private route: Router) {
 
   }
 
   ngOnInit(): void {
-    this.sessions = this.groupService.groups
+    this.groups = this.groupService.groups
     console.log(this.groupService.groups);
   }
 
@@ -28,6 +28,11 @@ export class GroupListComponent implements OnInit {
   editGroup(group: Group) {
     const index = this.groupService.groups.indexOf(group)
     this.route.navigate([`groups/edit/${index}`])
+  }
+
+  showDetails(group: Group) {
+    const index = this.groupService.groups.indexOf(group)
+    this.route.navigate([`groups/details/${index}`])
   }
 }
 

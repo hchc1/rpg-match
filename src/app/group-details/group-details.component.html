@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ group.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ group.system}}</h6>
+    <p class="card-text">{{ group.theme }}</p>
+    <p class="card-text">{{ group.date | date: 'dd/MM/yyyy'}}</p>
+    <p class="card-text">{{ group.description }}</p>
+    <a class="card-link">Aplicar</a>
+    <a class="card-link" (click)="back()">Voltar</a>
+  </div>
+</div>

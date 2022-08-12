@@ -50,6 +50,7 @@ export class GroupEditComponent implements OnInit {
 
   onSubmit(): void {
     const group: Group = this.groupForm.value;
+    group.date = new Date(group.dateString ?? '')
     if (this.groupIndex >= 0) {
       this.groupService.groups[this.groupIndex] = group;
     } else {
@@ -62,7 +63,8 @@ export class GroupEditComponent implements OnInit {
     if (!date) {
       return ''
     }
-    return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
+    console.log(date.getDay())
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
   }
 
 }

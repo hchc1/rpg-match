@@ -7,12 +7,15 @@
     <th>Ações</th>
   </thead>
   <tbody>
-    <tr *ngFor="let session of sessions">
-      <td>{{ session.title }}</td>
-      <td>{{ session.system }}</td>
-      <td>{{ session.theme }}</td>
-      <td>{{ session.date }}</td>
-      <td><a class="btn btn-warning" (click)="editGroup(session)">Editar</a></td>
+    <tr *ngFor="let group of groups">
+      <td>{{ group.title }}</td>
+      <td>{{ group.system }}</td>
+      <td>{{ group.theme }}</td>
+      <td>{{ group.date | date: 'dd/MM/yyyy'}}</td>
+      <td>
+        <a class="btn btn-warning" (click)="editGroup(group)">Editar</a>
+        <a class="btn btn-warning" (click)="showDetails(group)">Visualizar</a>
+      </td>
     </tr>
   </tbody>
 </table>
