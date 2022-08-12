@@ -4,22 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GroupListComponent } from './group-list/group-list.component';
-import { GroupCreateComponent } from './group-create/group-create.component';
+import { GroupEditComponent } from './group-edit/group-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { GroupService } from './group.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     GroupListComponent,
-    GroupCreateComponent
+    GroupEditComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [GroupService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

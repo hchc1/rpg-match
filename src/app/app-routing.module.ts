@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GroupCreateComponent } from './group-create/group-create.component';
+import { GroupEditComponent } from './group-edit/group-edit.component';
 import { GroupListComponent } from './group-list/group-list.component';
 
 const routes: Routes = [
@@ -10,11 +10,11 @@ const routes: Routes = [
   },
   {
     path: 'groups/create',
-    component: GroupCreateComponent,
+    component: GroupEditComponent,
   },
   {
     path: 'groups/edit/:index',
-    component: GroupCreateComponent
+    component: GroupEditComponent
   }
 ];
 

@@ -6,10 +6,10 @@ import { GroupService } from '../group.service';
 
 @Component({
   selector: 'app-group-create',
-  templateUrl: './group-create.component.html',
-  styleUrls: ['./group-create.component.sass']
+  templateUrl: './group-edit.component.html',
+  styleUrls: ['./group-edit.component.sass']
 })
-export class GroupCreateComponent implements OnInit {
+export class GroupEditComponent implements OnInit {
 
   groupForm = this.fb.group({
     title: ['', Validators.required],
