@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Group } from '../group.model';
+import { GroupService } from '../group.service';
 
 @Component({
   selector: 'app-group-list',
@@ -8,27 +10,24 @@ import { Group } from '../group.model';
 })
 export class GroupListComponent implements OnInit {
 
-  sessions: Group[] = [
-    new Group(
-    'Sessao top',
-    'D&D 5e',
-    'Aventura',
-    new Date('2022-07-16'),
-    ''
-    ),
-    {
-    title: 'Sessao FERAS',
-    system: 'D&D 5e',
-    theme: 'Aventura',
-    date: new Date('2022-07-16'),
-    description: ''
-   },
-  ]
+  sessions: Group[] = [];
 
-  constructor() { }
+  constructor(private groupService: GroupService, private route: Router) {
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    this.sessions = this.groupService.groups
+    console.log(this.groupService.groups);
+  }
+
+  createGroup(): void {
+    this.route.navigate(['groups/create'])
+  }
+
+  editGroup(group: Group) {
+    const index = this.groupService.groups.indexOf(group)
+    this.route.navigate([`groups/edit/${index}`])
+  }
 }
 

@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'groups/create',
     component: GroupCreateComponent,
   },
+  {
+    path: 'groups/edit/:index',
+    component: GroupCreateComponent
+  }
 ];
 
 @NgModule({

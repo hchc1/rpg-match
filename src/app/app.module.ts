@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GroupListComponent } from './group-list/group-list.component';
 import { GroupCreateComponent } from './group-create/group-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GroupService } from './group.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GroupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

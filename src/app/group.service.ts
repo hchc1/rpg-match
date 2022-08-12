@@ -6,7 +6,14 @@ import { Group } from './group.model';
 })
 export class GroupService {
   groups: Group[] = [
-
-  ]
-  constructor() { }
+    {
+      title: 'sessao',
+      system: 'D&D 5e',
+      theme: 'sim',
+      date: new Date('2022-08-12'),
+      description: 'sessao maneira'
+    },
+  ];
+  constructor() {
+  }
 }

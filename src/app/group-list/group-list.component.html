@@ -4,6 +4,7 @@
     <th>Sistema</th>
     <th>Tema</th>
     <th>Data</th>
+    <th>Ações</th>
   </thead>
   <tbody>
     <tr *ngFor="let session of sessions">
@@ -11,6 +12,8 @@
       <td>{{ session.system }}</td>
       <td>{{ session.theme }}</td>
       <td>{{ session.date }}</td>
+      <td><a class="btn btn-warning" (click)="editGroup(session)">Editar</a></td>
     </tr>
   </tbody>
 </table>
+<button class="btn btn-success" (click)="createGroup()">Novo</button>

@@ -5,5 +5,6 @@ export class Group {
     public theme?: string | null,
     public date?: Date | null,
     public description?: string | null,
+    public dateString?: string | null
   ) {}
 }
